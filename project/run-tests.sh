@@ -153,6 +153,23 @@ wait_for_async_tests() {
 ./run-test.sh "$@" "it_should_fail_on_validate_not_first_instruction" ./myvmm -v tests/validate_not_first_snapshot_assembly_file -s tests/validate_not_first_snapshot_snapshot
 ./run-test.sh "$@" "it_should_fail_on_create_snapshot_in_non_existent_directory" ./myvmm -v tests/non_existent_directory_snapshot_assembly_file
 
+MIGRATION_DOMAIN="${MIGRATION_DOMAIN:-cmpe-283.ianbunag.dev}"
+
+# It should support complete feature set
+./run-test.sh "$@" "it_should_support_complete_feature_set" ./myvmm -d -p 9078 -t 1 -n 2 -v tests/complete_feature_set_vm1_assembly_file -s tests/complete_feature_set_vm1_snapshot -v tests/complete_feature_set_vm2_assembly_file
+
+cat <<EOF > tests/complete_feature_set_live_url_vm1_instructions
+li \$1,10
+li \$2,20
+add \$3,\$1,\$2
+SNAPSHOT tests/complete_feature_set_live_url_vm1_snapshot
+DUMP_REGISTER_STATE \$3
+MIGRATE ${MIGRATION_DOMAIN}:9089
+addi \$3,\$3,12
+DUMP_REGISTER_STATE \$3
+EOF
+./run-test.sh "$@" "it_should_support_complete_feature_set_with_live_url_migration" ./myvmm -d -p 9089 -t 1 -n 2 -v tests/complete_feature_set_live_url_vm1_assembly_file -s tests/complete_feature_set_live_url_vm1_snapshot -v tests/complete_feature_set_vm2_assembly_file
+
 # It should support live migration.
 run_test_async "$@" "it_should_support_live_migration" ./myvmm -d -p 9090 -t 1 -v tests/live_migration_assembly_file
 run_test_async "$@" "it_should_timeout_when_no_migration_received" ./myvmm -p 9091 -t 6
@@ -172,8 +189,6 @@ run_test_async "$@" "it_should_receive_cross_process_migration" ./myvmm -p 9900 
 run_test_async "$@" "it_should_send_cross_process_migration" ./myvmm -v tests/cross_process_migration_assembly_file
 run_test_async "$@" "it_should_round_trip_migrate_vm_a" ./myvmm -p 9901 -t 3 -v tests/round_trip_vm_a_assembly_file
 run_test_async "$@" "it_should_round_trip_migrate_vm_b" ./myvmm -p 9902 -t 3 -v tests/round_trip_vm_b_assembly_file
-
-MIGRATION_DOMAIN="${MIGRATION_DOMAIN:-cmpe-283.ianbunag.dev}"
 
 # It should confirm live url requests go through the internet - the request will fail because the port is not exposed.
 cat <<EOF > tests/localhost_then_closed_port_migration_instructions
@@ -198,9 +213,6 @@ addi \$3,\$3,12
 DUMP_REGISTER_STATE \$3
 EOF
 run_test_async "$@" "it_should_support_live_url_migration" ./myvmm -d -p 9089 -t 1 -v tests/live_url_migration_assembly_file
-
-# It should support complete feature set
-run_test_async "$@" "it_should_support_complete_feature_set" ./myvmm -d -p 9078 -t 1 -n 2 -v tests/complete_feature_set_vm1_assembly_file -s tests/complete_feature_set_vm1_snapshot -v tests/complete_feature_set_vm2_assembly_file
 
 # It should fail on server port collision.
 ./myvmm -p 9990 -t 5 >/dev/null 2>&1 &

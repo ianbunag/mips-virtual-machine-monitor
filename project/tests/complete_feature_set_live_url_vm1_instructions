@@ -1,0 +1,8 @@
+li $1,10
+li $2,20
+add $3,$1,$2
+SNAPSHOT tests/complete_feature_set_live_url_vm1_snapshot
+DUMP_REGISTER_STATE $3
+MIGRATE cmpe-283.ianbunag.dev:9089
+addi $3,$3,12
+DUMP_REGISTER_STATE $3
