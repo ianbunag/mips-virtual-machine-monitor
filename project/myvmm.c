@@ -61,6 +61,7 @@ typedef struct Pattern
 typedef struct Patterns
 {
     Pattern vm_binary;
+    Pattern vm_exec_slice_in_instructions;
     Pattern dump_processor_state;
     Pattern dump_register_state;
     Pattern li;
@@ -198,6 +199,7 @@ typedef struct NodeConfig
     char* assembly_file_name;
     char* vm_binary;
     char* snapshot_file;
+    int exec_slice;
 } NodeConfig;
 
 typedef struct NodeSocket
@@ -1143,6 +1145,7 @@ static void teardown_node_config(NodeConfig* config)
 static bool setup_node_config(char* assembly_file_name, NodeConfig* config, const Patterns* patterns)
 {
     memset(config, 0, sizeof(NodeConfig));
+    config->exec_slice = -1;
     config->assembly_file_name = strndup(assembly_file_name, MAX_LINE_LEN);
     debug("NodeConfig->assembly_file_name = \"%s\"\n", config->assembly_file_name);
 
@@ -1187,6 +1190,17 @@ static bool setup_node_config(char* assembly_file_name, NodeConfig* config, cons
             {
                 fprintf(stderr, "Error: NodeConfig.vm_binary memory allocation failed.\n");
                 has_error = true;
+            }
+        }
+        else if (match_pattern(line, &patterns->vm_exec_slice_in_instructions, match))
+        {
+            char* endptr = NULL;
+            const long slice = strtol(match->capture_groups[0], &endptr, 10);
+
+            if (endptr != match->capture_groups[0] && *endptr == '\0' && slice > 0)
+            {
+                config->exec_slice = (int)slice;
+                debug("NodeConfig->exec_slice = %d\n", config->exec_slice);
             }
         }
 
@@ -1822,6 +1836,13 @@ static void teardown_hypervisor_patterns(Patterns* patterns)
         patterns->vm_binary.is_initialized = false;
     }
 
+    if (patterns->vm_exec_slice_in_instructions.is_initialized)
+    {
+        regfree(&patterns->vm_exec_slice_in_instructions.pattern);
+        patterns->vm_exec_slice_in_instructions.groups = 0;
+        patterns->vm_exec_slice_in_instructions.is_initialized = false;
+    }
+
     if (patterns->dump_processor_state.is_initialized)
     {
         regfree(&patterns->dump_processor_state.pattern);
@@ -2003,6 +2024,13 @@ static bool setup_hypervisor_patterns(Patterns* patterns)
         return fail_setup_hypervisor_pattern("vm_binary", patterns);
     patterns->vm_binary.groups = 1;
     patterns->vm_binary.is_initialized = true;
+
+    if (regcomp(&patterns->vm_exec_slice_in_instructions.pattern,
+                "^[[:space:]]*vm_exec_slice_in_instructions[[:space:]]*=[[:space:]]*([0-9]+)[[:space:]]*$",
+                REG_EXTENDED) != 0)
+        return fail_setup_hypervisor_pattern("vm_exec_slice_in_instructions", patterns);
+    patterns->vm_exec_slice_in_instructions.groups = 1;
+    patterns->vm_exec_slice_in_instructions.is_initialized = true;
 
     if (regcomp(&patterns->dump_processor_state.pattern, "^[[:space:]]*DUMP_PROCESSOR_STATE[[:space:]]*$",
                 REG_EXTENDED) != 0)
