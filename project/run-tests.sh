@@ -76,6 +76,9 @@ wait_for_async_tests() {
 ./run-test.sh "$@" "it_should_fail_on_invalid_timeout" ./myvmm -t 0
 ./run-test.sh "$@" "it_should_fail_on_negative_timeout" ./myvmm -t -1
 ./run-test.sh "$@" "it_should_fail_on_non_numeric_timeout" ./myvmm -t abc
+./run-test.sh "$@" "it_should_fail_on_zero_instruction_slice" ./myvmm -n 0
+./run-test.sh "$@" "it_should_fail_on_negative_instruction_slice" ./myvmm -n -1
+./run-test.sh "$@" "it_should_fail_on_non_numeric_instruction_slice" ./myvmm -n abc
 
 
 # It should support configuration quirks.
