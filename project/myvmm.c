@@ -1291,7 +1291,7 @@ static void drop_node(Hypervisor* hypervisor, Node* target_node)
         teardown_node(target_node);
     }
 
-    if (hypervisor->head_node == NULL)
+    if (hypervisor->head_node == NULL || hypervisor->current_node == target_node)
         hypervisor->current_node = NULL;
 }
 
