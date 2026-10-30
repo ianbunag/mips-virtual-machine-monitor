@@ -21,7 +21,6 @@
 [0m[0;33mDebug: Hypervisor->current_node = "/tmp/myvmm_received_instr_9904_0"
 [0m[0;33mDebug: Running instruction "DUMP_REGISTER_STATE $3"
 [0m[0;33mDebug: Hypervisor->current_node = "/tmp/myvmm_received_instr_9904_0"
-[0m[0;33mDebug: Hypervisor->current_node = "/tmp/myvmm_received_instr_9904_0"
 [0m[0;33mDebug: Dropping node "/tmp/myvmm_received_instr_9904_0"
 [0mR3=42
 No VM running, waiting for incoming VM migration on port 9904...

@@ -54,7 +54,6 @@
 [0m[0;33mDebug: Running instruction "DUMP_PROCESSOR_STATE"
 [0m[0;33mDebug: Hypervisor->current_node = "tests/individual_slice_unbounded_instructions"
 [0m[0;33mDebug: Dropping node "tests/individual_slice_higher_instructions"
-[0m[0;33mDebug: Hypervisor->current_node = "tests/individual_slice_unbounded_instructions"
 [0m[0;33mDebug: Dropping node "tests/individual_slice_unbounded_instructions"
 [0mR0=0
 R1=1000

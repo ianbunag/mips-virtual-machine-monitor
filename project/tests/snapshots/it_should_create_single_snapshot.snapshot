@@ -75,7 +75,6 @@
 [0m[0;33mDebug: Running instruction "SNAPSHOT tests/single_snapshot_snapshot"
 [0m[0;33mDebug: Taking snapshot "tests/single_snapshot_snapshot"
 [0m[0;33mDebug: Running instruction "DUMP_PROCESSOR_STATE"
-[0m[0;33mDebug: Hypervisor->current_node = "tests/single_snapshot_instructions"
 [0m[0;33mDebug: Dropping node "tests/single_snapshot_instructions"
 [0mR0=0
 R1=1

@@ -17,7 +17,6 @@
 [0m[0;33mDebug: Running instruction "MIGRATE 127.0.0.1:9090"
 [0m[0;33mDebug: Taking snapshot "/tmp/myvmm_snap_9090_0"
 [0m[0;33mDebug: Migrating node "tests/live_migration_instructions" to 127.0.0.1:9090
-[0m[0;33mDebug: Hypervisor->current_node = "tests/live_migration_instructions"
 [0m[0;33mDebug: Dropping node "tests/live_migration_instructions"
 [0m[0;33mDebug: NodeConfig->assembly_file_name = "/tmp/myvmm_received_cfg_9090_0"
 [0m[0;33mDebug: NodeConfig->vm_binary = "/tmp/myvmm_received_instr_9090_0"
@@ -35,7 +34,6 @@
 [0m[0;33mDebug: Running instruction "addi $3,$3,12"
 [0m[0;33mDebug: NodeProcessor->registers[3] = 42
 [0m[0;33mDebug: Running instruction "DUMP_REGISTER_STATE $3"
-[0m[0;33mDebug: Hypervisor->current_node = "/tmp/myvmm_received_instr_9090_0"
 [0m[0;33mDebug: Dropping node "/tmp/myvmm_received_instr_9090_0"
 [0mR3=42
 No VM running, waiting for incoming VM migration on port 9090...

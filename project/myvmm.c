@@ -1820,7 +1820,9 @@ static bool run_hypervisor(Hypervisor* hypervisor)
         {
             Node* finished_node = hypervisor->current_node;
 
-            switch_node(hypervisor);
+            if (hypervisor->head_node != NULL && hypervisor->head_node->next != NULL)
+                switch_node(hypervisor);
+
             drop_node(hypervisor, finished_node);
         }
         else

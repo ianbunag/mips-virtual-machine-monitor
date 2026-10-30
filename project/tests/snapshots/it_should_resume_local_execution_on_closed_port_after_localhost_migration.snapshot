@@ -17,7 +17,6 @@
 [0m[0;33mDebug: Running instruction "MIGRATE 127.0.0.1:9088"
 [0m[0;33mDebug: Taking snapshot "/tmp/myvmm_snap_9088_0"
 [0m[0;33mDebug: Migrating node "tests/localhost_then_closed_port_migration_instructions" to 127.0.0.1:9088
-[0m[0;33mDebug: Hypervisor->current_node = "tests/localhost_then_closed_port_migration_instructions"
 [0m[0;33mDebug: Dropping node "tests/localhost_then_closed_port_migration_instructions"
 [0m[0;33mDebug: NodeConfig->assembly_file_name = "/tmp/myvmm_received_cfg_9088_0"
 [0m[0;33mDebug: NodeConfig->vm_binary = "/tmp/myvmm_received_instr_9088_0"
@@ -45,7 +44,6 @@
 [0;33mDebug: Running instruction "addi $3,$3,8"
 [0m[0;33mDebug: NodeProcessor->registers[3] = 50
 [0m[0;33mDebug: Running instruction "DUMP_REGISTER_STATE $3"
-[0m[0;33mDebug: Hypervisor->current_node = "/tmp/myvmm_received_instr_9088_0"
 [0m[0;33mDebug: Dropping node "/tmp/myvmm_received_instr_9088_0"
 [0mR3=50
 No VM running, waiting for incoming VM migration on port 9088...

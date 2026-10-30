@@ -18,7 +18,6 @@
 [0m[0;33mDebug: Running instruction "li $2,20"
 [0m[0;33mDebug: NodeProcessor->registers[2] = 20
 [0m[0;33mDebug: Running instruction "DUMP_REGISTER_STATE $2"
-[0m[0;33mDebug: Hypervisor->current_node = "tests/debug_multiple_vms_vm2_instructions"
 [0m[0;33mDebug: Dropping node "tests/debug_multiple_vms_vm2_instructions"
 [0mR1=10
 R2=20

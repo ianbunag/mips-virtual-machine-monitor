@@ -20,7 +20,6 @@
 [0m[0;33mDebug: NodeProcessor->registers[5] = 25
 [0m[0;33mDebug: Running instruction "DUMP_PROCESSOR_STATE"
 [0m[0;33mDebug: Hypervisor->current_node = "tests/instruction_slice_vm1_instructions"
-[0m[0;33mDebug: Hypervisor->current_node = "tests/instruction_slice_vm1_instructions"
 [0m[0;33mDebug: Dropping node "tests/instruction_slice_vm1_instructions"
 [0mR0=0
 R1=10

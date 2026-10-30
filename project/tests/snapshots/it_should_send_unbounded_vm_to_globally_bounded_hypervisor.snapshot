@@ -15,6 +15,5 @@
 [0m[0;33mDebug: Running instruction "MIGRATE 127.0.0.1:9903"
 [0m[0;33mDebug: Taking snapshot "/tmp/myvmm_snap_9903_0"
 [0m[0;33mDebug: Migrating node "tests/cross_process_unbounded_to_bounded_instructions" to 127.0.0.1:9903
-[0m[0;33mDebug: Hypervisor->current_node = "tests/cross_process_unbounded_to_bounded_instructions"
 [0m[0;33mDebug: Dropping node "tests/cross_process_unbounded_to_bounded_instructions"
 [0mR3=30

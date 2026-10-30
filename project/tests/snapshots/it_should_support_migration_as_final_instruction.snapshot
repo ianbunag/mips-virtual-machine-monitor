@@ -17,7 +17,6 @@
 [0m[0;33mDebug: Running instruction "MIGRATE 127.0.0.1:9098"
 [0m[0;33mDebug: Taking snapshot "/tmp/myvmm_snap_9098_0"
 [0m[0;33mDebug: Migrating node "tests/final_instruction_migration_instructions" to 127.0.0.1:9098
-[0m[0;33mDebug: Hypervisor->current_node = "tests/final_instruction_migration_instructions"
 [0m[0;33mDebug: Dropping node "tests/final_instruction_migration_instructions"
 [0m[0;33mDebug: NodeConfig->assembly_file_name = "/tmp/myvmm_received_cfg_9098_0"
 [0m[0;33mDebug: NodeConfig->vm_binary = "/tmp/myvmm_received_instr_9098_0"
@@ -31,7 +30,6 @@
 [0m[0;33mDebug: NodeProcessor->registers[3] = 30
 [0m[0;33mDebug: Successfully received and restored migrated node "/tmp/myvmm_received_instr_9098_0"
 [0m[0;33mDebug: Transferring pending node "/tmp/myvmm_received_instr_9098_0" to running list
-[0m[0;33mDebug: Hypervisor->current_node = "/tmp/myvmm_received_instr_9098_0"
 [0m[0;33mDebug: Hypervisor->current_node = "/tmp/myvmm_received_instr_9098_0"
 [0m[0;33mDebug: Dropping node "/tmp/myvmm_received_instr_9098_0"
 [0mNo VM running, waiting for incoming VM migration on port 9098...
