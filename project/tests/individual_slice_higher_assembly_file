@@ -1,0 +1,2 @@
+vm_exec_slice_in_instructions=3
+vm_binary=tests/individual_slice_higher_instructions

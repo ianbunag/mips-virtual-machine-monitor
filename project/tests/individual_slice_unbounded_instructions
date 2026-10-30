@@ -1,0 +1,4 @@
+li $1,1000
+li $2,2000
+add $3,$1,$2
+DUMP_PROCESSOR_STATE
