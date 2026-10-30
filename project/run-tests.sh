@@ -120,9 +120,11 @@ wait_for_async_tests() {
 ./run-test.sh "$@" "it_should_ignore_write_to_zero_register" ./myvmm -v tests/zero_register_assembly_file
 
 # It should support instruction execution slicing.
+./run-test.sh "$@" "it_should_run_single_vm_with_instruction_slice" ./myvmm -d -n 2 -v tests/instruction_slice_vm1_assembly_file
 ./run-test.sh "$@" "it_should_run_multiple_vms_with_instruction_slice" ./myvmm -d -n 2 -v tests/instruction_slice_vm1_assembly_file -v tests/instruction_slice_vm2_assembly_file
 ./run-test.sh "$@" "it_should_support_individual_vm_instruction_slices" ./myvmm -d -v tests/individual_slice_lower_assembly_file -v tests/individual_slice_higher_assembly_file -v tests/individual_slice_unbounded_assembly_file
 ./run-test.sh "$@" "it_should_override_individual_vm_instruction_slices_with_global_slice" ./myvmm -d -n 4 -v tests/individual_slice_lower_assembly_file -v tests/individual_slice_higher_assembly_file -v tests/individual_slice_unbounded_assembly_file
+./run-test.sh "$@" "it_should_follow_last_of_duplicate_instruction_slice" ./myvmm -d -n 10 -n 2 -v tests/instruction_slice_vm1_assembly_file
 
 # It should support snapshots.
 ./run-test.sh "$@" "it_should_create_single_snapshot" ./myvmm -d -v tests/single_snapshot_assembly_file
