@@ -1,0 +1,6 @@
+li $1,100
+li $2,200
+add $3,$1,$2
+DUMP_REGISTER_STATE $3
+addi $3,$3,50
+DUMP_PROCESSOR_STATE

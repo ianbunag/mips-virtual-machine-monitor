@@ -199,6 +199,9 @@ DUMP_REGISTER_STATE \$3
 EOF
 run_test_async "$@" "it_should_support_live_url_migration" ./myvmm -d -p 9089 -t 1 -v tests/live_url_migration_assembly_file
 
+# It should support complete feature set
+run_test_async "$@" "it_should_support_complete_feature_set" ./myvmm -d -p 9078 -t 1 -n 2 -v tests/complete_feature_set_vm1_assembly_file -s tests/complete_feature_set_vm1_snapshot -v tests/complete_feature_set_vm2_assembly_file
+
 # It should fail on server port collision.
 ./myvmm -p 9990 -t 5 >/dev/null 2>&1 &
 COLLISION_SERVER_PID=$!
