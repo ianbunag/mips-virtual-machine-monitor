@@ -85,6 +85,9 @@ wait_for_async_tests() {
 ./run-test.sh "$@" "it_should_parse_spaced_vm_file" ./myvmm -v tests/spaced_assembly_file
 ./run-test.sh "$@" "it_should_skip_blank_lines_between_instructions" ./myvmm -v tests/blank_lines_assembly_file
 ./run-test.sh "$@" "it_should_follow_last_of_duplicate_config" ./myvmm -v tests/duplicate_config_assembly_file
+./run-test.sh "$@" "it_should_ignore_zero_vm_exec_slice" ./myvmm -v tests/zero_vm_exec_slice_assembly_file
+./run-test.sh "$@" "it_should_ignore_negative_vm_exec_slice" ./myvmm -v tests/negative_vm_exec_slice_assembly_file
+./run-test.sh "$@" "it_should_ignore_non_numeric_vm_exec_slice" ./myvmm -v tests/non_numeric_vm_exec_slice_assembly_file
 ./run-test.sh "$@" "it_should_skip_when_no_vm_configured" ./myvmm -d
 ./run-test.sh "$@" "it_should_parse_absolute_paths" ./myvmm -d -v /home/johnbunag/Documents/remote-cmpe-283-virtual-technologies/project/tests/absolute_path_assembly_file
 ./run-test.sh "$@" "it_should_create_snapshot_with_mixed_paths" ./myvmm -v mixed_paths_assembly_file
