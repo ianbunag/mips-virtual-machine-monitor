@@ -976,10 +976,18 @@ static bool run_node(const Hypervisor* hypervisor)
     size_t len = 0;
     Match* match = NULL;
     bool has_error = false;
+    int slice = -1;
+    int instructions_run = 0;
+
+    if (hypervisor->instruction_slice > 0)
+        slice = hypervisor->instruction_slice;
+    else if (hypervisor->current_node->config.exec_slice > 0)
+        slice = hypervisor->current_node->config.exec_slice;
 
     while (
         keep_running &&
         hypervisor->current_node->socket.has_pending_instructions &&
+        (slice <= 0 || instructions_run < slice) &&
         (chars_read = getline(&line, &len, hypervisor->current_node->socket.file)) != -1)
     {
         line[strcspn(line, "\r\n")] = '\0'; // Remove line breaks.
@@ -1041,6 +1049,7 @@ static bool run_node(const Hypervisor* hypervisor)
             fprintf(stderr, "Exception: Unknown instruction \"%s\"\n", line);
 
         hypervisor->current_node->processor.executed_instructions += 1;
+        instructions_run += 1;
     }
 
     if (chars_read == -1)
