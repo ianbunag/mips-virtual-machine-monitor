@@ -10,6 +10,7 @@
 [0m[0;33mDebug: Enqueuing pending node "tests/instruction_slice_vm2_instructions"
 [0m[0;33mDebug: Transferring pending node "tests/instruction_slice_vm1_instructions" to running list
 [0m[0;33mDebug: Transferring pending node "tests/instruction_slice_vm2_instructions" to running list
+[0m[0;33mDebug: Hypervisor->current_node = "tests/instruction_slice_vm1_instructions"
 [0m[0;33mDebug: Running instruction "li $1,10"
 [0m[0;33mDebug: NodeProcessor->registers[1] = 10
 [0m[0;33mDebug: Running instruction "li $2,20"

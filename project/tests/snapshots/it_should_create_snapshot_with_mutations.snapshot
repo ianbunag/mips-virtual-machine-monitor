@@ -4,6 +4,7 @@
 [0m[0;33mDebug: NodeConfig->vm_binary = "tests/snapshot_mutations_instructions"
 [0m[0;33mDebug: Enqueuing pending node "tests/snapshot_mutations_instructions"
 [0m[0;33mDebug: Transferring pending node "tests/snapshot_mutations_instructions" to running list
+[0m[0;33mDebug: Hypervisor->current_node = "tests/snapshot_mutations_instructions"
 [0m[0;33mDebug: Running instruction "li $1,10"
 [0m[0;33mDebug: NodeProcessor->registers[1] = 10
 [0m[0;33mDebug: Running instruction "li $2,20"

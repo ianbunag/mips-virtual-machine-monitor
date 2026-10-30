@@ -4,6 +4,7 @@
 [0m[0;33mDebug: NodeConfig->vm_binary = "tests/debug_instructions"
 [0m[0;33mDebug: Enqueuing pending node "tests/debug_instructions"
 [0m[0;33mDebug: Transferring pending node "tests/debug_instructions" to running list
+[0m[0;33mDebug: Hypervisor->current_node = "tests/debug_instructions"
 [0m[0;33mDebug: Running instruction "DUMP_PROCESSOR_STATE"
 [0m[0;33mDebug: Hypervisor->current_node = "tests/debug_instructions"
 [0m[0;33mDebug: Dropping node "tests/debug_instructions"

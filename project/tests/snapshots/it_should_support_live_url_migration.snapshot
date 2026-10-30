@@ -7,6 +7,7 @@
 [0m[0;33mDebug: Enqueuing pending node "tests/live_url_migration_instructions"
 [0m[0;33mDebug: Server listening on port 9089 (file_descriptor 4)
 [0m[0;33mDebug: Transferring pending node "tests/live_url_migration_instructions" to running list
+[0m[0;33mDebug: Hypervisor->current_node = "tests/live_url_migration_instructions"
 [0m[0;33mDebug: Running instruction "li $1,10"
 [0m[0;33mDebug: NodeProcessor->registers[1] = 10
 [0m[0;33mDebug: Running instruction "li $2,20"

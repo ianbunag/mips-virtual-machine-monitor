@@ -41,6 +41,7 @@
 [0m[0;33mDebug: NodeProcessor->registers[32] = 32
 [0m[0;33mDebug: NodeProcessor->registers[33] = 33
 [0m[0;33mDebug: Transferring pending node "tests/single_snapshot_instructions" to running list
+[0m[0;33mDebug: Hypervisor->current_node = "tests/single_snapshot_instructions"
 [0m[0;33mDebug: Running instruction "DUMP_PROCESSOR_STATE"
 [0m[0;33mDebug: Hypervisor->current_node = "tests/single_snapshot_instructions"
 [0m[0;33mDebug: Dropping node "tests/single_snapshot_instructions"

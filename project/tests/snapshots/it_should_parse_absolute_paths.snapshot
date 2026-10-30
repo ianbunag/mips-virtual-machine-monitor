@@ -4,6 +4,7 @@
 [0m[0;33mDebug: NodeConfig->vm_binary = "/home/johnbunag/Documents/remote-cmpe-283-virtual-technologies/project/tests/absolute_path_instructions"
 [0m[0;33mDebug: Enqueuing pending node "/home/johnbunag/Documents/remote-cmpe-283-virtual-technologies/project/tests/absolute_path_instructions"
 [0m[0;33mDebug: Transferring pending node "/home/johnbunag/Documents/remote-cmpe-283-virtual-technologies/project/tests/absolute_path_instructions" to running list
+[0m[0;33mDebug: Hypervisor->current_node = "/home/johnbunag/Documents/remote-cmpe-283-virtual-technologies/project/tests/absolute_path_instructions"
 [0m[0;33mDebug: Running instruction "DUMP_PROCESSOR_STATE"
 [0m[0;33mDebug: Hypervisor->current_node = "/home/johnbunag/Documents/remote-cmpe-283-virtual-technologies/project/tests/absolute_path_instructions"
 [0m[0;33mDebug: Dropping node "/home/johnbunag/Documents/remote-cmpe-283-virtual-technologies/project/tests/absolute_path_instructions"

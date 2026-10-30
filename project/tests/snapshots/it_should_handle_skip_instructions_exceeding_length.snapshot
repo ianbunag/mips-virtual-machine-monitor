@@ -42,5 +42,6 @@
 [0m[0;33mDebug: NodeProcessor->registers[33] = 0
 [0m[0;33mDebug: Transferring pending node "tests/skip_instructions_exceeded_instructions" to running list
 [0m[0;33mDebug: Hypervisor->current_node = "tests/skip_instructions_exceeded_instructions"
+[0m[0;33mDebug: Hypervisor->current_node = "tests/skip_instructions_exceeded_instructions"
 [0m[0;33mDebug: Dropping node "tests/skip_instructions_exceeded_instructions"
 [0m

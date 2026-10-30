@@ -1534,7 +1534,7 @@ static void restore_pending_snapshots(Hypervisor* hypervisor)
         current = next;
     }
 
-    hypervisor->current_node = hypervisor->pending_head;
+    hypervisor->current_node = NULL;
 }
 
 static Node* setup_node(char* assembly_file_name, const Patterns* patterns)
