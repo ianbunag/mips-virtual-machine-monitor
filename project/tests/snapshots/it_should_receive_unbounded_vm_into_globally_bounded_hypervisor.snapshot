@@ -1,0 +1,28 @@
+[0;33mDebug: Debug enabled.
+[0m[0;33mDebug: Server port = 9903
+[0m[0;33mDebug: Server timeout = 2 seconds
+[0m[0;33mDebug: Instruction slice = 1
+[0m[0;33mDebug: Server listening on port 9903 (file_descriptor 3)
+[0m[0;33mDebug: NodeConfig->assembly_file_name = "/tmp/myvmm_received_cfg_9903_0"
+[0m[0;33mDebug: NodeConfig->vm_binary = "/tmp/myvmm_received_instr_9903_0"
+[0m[0;33mDebug: Received node "/tmp/myvmm_received_instr_9903_0"
+[0m[0;33mDebug: Enqueuing pending node "/tmp/myvmm_received_instr_9903_0"
+[0m[0;33mDebug: Restoring node from "/tmp/myvmm_received_snap_9903_0"
+[0m[0;33mDebug: Validating snapshot "/tmp/myvmm_received_snap_9903_0"
+[0m[0;33mDebug: Skipping 5 instructions
+[0m[0;33mDebug: NodeProcessor->registers[1] = 10
+[0m[0;33mDebug: NodeProcessor->registers[2] = 20
+[0m[0;33mDebug: NodeProcessor->registers[3] = 30
+[0m[0;33mDebug: Successfully received and restored migrated node "/tmp/myvmm_received_instr_9903_0"
+[0m[0;33mDebug: Transferring pending node "/tmp/myvmm_received_instr_9903_0" to running list
+[0m[0;33mDebug: Hypervisor->current_node = "/tmp/myvmm_received_instr_9903_0"
+[0m[0;33mDebug: Running instruction "addi $3,$3,12"
+[0m[0;33mDebug: NodeProcessor->registers[3] = 42
+[0m[0;33mDebug: Hypervisor->current_node = "/tmp/myvmm_received_instr_9903_0"
+[0m[0;33mDebug: Running instruction "DUMP_REGISTER_STATE $3"
+[0m[0;33mDebug: Hypervisor->current_node = "/tmp/myvmm_received_instr_9903_0"
+[0m[0;33mDebug: Hypervisor->current_node = "/tmp/myvmm_received_instr_9903_0"
+[0m[0;33mDebug: Dropping node "/tmp/myvmm_received_instr_9903_0"
+[0mR3=42
+No VM running, waiting for incoming VM migration on port 9903...
+Server timeout reached after 2 seconds, closing server.

@@ -1,0 +1,25 @@
+[0;33mDebug: Debug enabled.
+[0m[0;33mDebug: Node = "tests/cross_process_bounded_to_unbounded_assembly_file"
+[0m[0;33mDebug: NodeConfig->assembly_file_name = "tests/cross_process_bounded_to_unbounded_assembly_file"
+[0m[0;33mDebug: NodeConfig->exec_slice = 1
+[0m[0;33mDebug: NodeConfig->vm_binary = "tests/cross_process_bounded_to_unbounded_instructions"
+[0m[0;33mDebug: Enqueuing pending node "tests/cross_process_bounded_to_unbounded_instructions"
+[0m[0;33mDebug: Transferring pending node "tests/cross_process_bounded_to_unbounded_instructions" to running list
+[0m[0;33mDebug: Hypervisor->current_node = "tests/cross_process_bounded_to_unbounded_instructions"
+[0m[0;33mDebug: Running instruction "li $1,10"
+[0m[0;33mDebug: NodeProcessor->registers[1] = 10
+[0m[0;33mDebug: Hypervisor->current_node = "tests/cross_process_bounded_to_unbounded_instructions"
+[0m[0;33mDebug: Running instruction "li $2,20"
+[0m[0;33mDebug: NodeProcessor->registers[2] = 20
+[0m[0;33mDebug: Hypervisor->current_node = "tests/cross_process_bounded_to_unbounded_instructions"
+[0m[0;33mDebug: Running instruction "add $3,$1,$2"
+[0m[0;33mDebug: NodeProcessor->registers[3] = 30
+[0m[0;33mDebug: Hypervisor->current_node = "tests/cross_process_bounded_to_unbounded_instructions"
+[0m[0;33mDebug: Running instruction "DUMP_REGISTER_STATE $3"
+[0m[0;33mDebug: Hypervisor->current_node = "tests/cross_process_bounded_to_unbounded_instructions"
+[0m[0;33mDebug: Running instruction "MIGRATE 127.0.0.1:9904"
+[0m[0;33mDebug: Taking snapshot "/tmp/myvmm_snap_9904_0"
+[0m[0;33mDebug: Migrating node "tests/cross_process_bounded_to_unbounded_instructions" to 127.0.0.1:9904
+[0m[0;33mDebug: Hypervisor->current_node = "tests/cross_process_bounded_to_unbounded_instructions"
+[0m[0;33mDebug: Dropping node "tests/cross_process_bounded_to_unbounded_instructions"
+[0mR3=30

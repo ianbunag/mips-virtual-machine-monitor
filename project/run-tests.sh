@@ -189,6 +189,11 @@ run_test_async "$@" "it_should_receive_cross_process_migration" ./myvmm -p 9900 
 run_test_async "$@" "it_should_send_cross_process_migration" ./myvmm -v tests/cross_process_migration_assembly_file
 run_test_async "$@" "it_should_round_trip_migrate_vm_a" ./myvmm -p 9901 -t 3 -v tests/round_trip_vm_a_assembly_file
 run_test_async "$@" "it_should_round_trip_migrate_vm_b" ./myvmm -p 9902 -t 3 -v tests/round_trip_vm_b_assembly_file
+run_test_async "$@" "it_should_receive_unbounded_vm_into_globally_bounded_hypervisor" ./myvmm -d -p 9903 -t 2 -n 1
+run_test_async "$@" "it_should_receive_individually_bounded_vm_into_unbounded_hypervisor" ./myvmm -d -p 9904 -t 2
+sleep 0.5
+run_test_async "$@" "it_should_send_unbounded_vm_to_globally_bounded_hypervisor" ./myvmm -d -v tests/cross_process_unbounded_to_bounded_assembly_file
+run_test_async "$@" "it_should_send_individually_bounded_vm_to_unbounded_hypervisor" ./myvmm -d -v tests/cross_process_bounded_to_unbounded_assembly_file
 
 # It should confirm live url requests go through the internet - the request will fail because the port is not exposed.
 cat <<EOF > tests/localhost_then_closed_port_migration_instructions

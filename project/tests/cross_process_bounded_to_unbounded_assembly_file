@@ -1,0 +1,2 @@
+vm_exec_slice_in_instructions=1
+vm_binary=tests/cross_process_bounded_to_unbounded_instructions
