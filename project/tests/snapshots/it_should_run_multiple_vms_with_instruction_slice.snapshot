@@ -1,0 +1,112 @@
+[0;33mDebug: Debug enabled.
+[0m[0;33mDebug: Instruction slice = 2
+[0m[0;33mDebug: Node = "tests/instruction_slice_vm1_assembly_file"
+[0m[0;33mDebug: NodeConfig->assembly_file_name = "tests/instruction_slice_vm1_assembly_file"
+[0m[0;33mDebug: NodeConfig->vm_binary = "tests/instruction_slice_vm1_instructions"
+[0m[0;33mDebug: Enqueuing pending node "tests/instruction_slice_vm1_instructions"
+[0m[0;33mDebug: Node = "tests/instruction_slice_vm2_assembly_file"
+[0m[0;33mDebug: NodeConfig->assembly_file_name = "tests/instruction_slice_vm2_assembly_file"
+[0m[0;33mDebug: NodeConfig->vm_binary = "tests/instruction_slice_vm2_instructions"
+[0m[0;33mDebug: Enqueuing pending node "tests/instruction_slice_vm2_instructions"
+[0m[0;33mDebug: Transferring pending node "tests/instruction_slice_vm1_instructions" to running list
+[0m[0;33mDebug: Transferring pending node "tests/instruction_slice_vm2_instructions" to running list
+[0m[0;33mDebug: Running instruction "li $1,10"
+[0m[0;33mDebug: NodeProcessor->registers[1] = 10
+[0m[0;33mDebug: Running instruction "li $2,20"
+[0m[0;33mDebug: NodeProcessor->registers[2] = 20
+[0m[0;33mDebug: Hypervisor->current_node = "tests/instruction_slice_vm2_instructions"
+[0m[0;33mDebug: Running instruction "li $1,100"
+[0m[0;33mDebug: NodeProcessor->registers[1] = 100
+[0m[0;33mDebug: Running instruction "li $2,200"
+[0m[0;33mDebug: NodeProcessor->registers[2] = 200
+[0m[0;33mDebug: Hypervisor->current_node = "tests/instruction_slice_vm1_instructions"
+[0m[0;33mDebug: Running instruction "add $3,$1,$2"
+[0m[0;33mDebug: NodeProcessor->registers[3] = 30
+[0m[0;33mDebug: Running instruction "addi $4,$3,5"
+[0m[0;33mDebug: NodeProcessor->registers[4] = 35
+[0m[0;33mDebug: Hypervisor->current_node = "tests/instruction_slice_vm2_instructions"
+[0m[0;33mDebug: Running instruction "add $3,$1,$2"
+[0m[0;33mDebug: NodeProcessor->registers[3] = 300
+[0m[0;33mDebug: Running instruction "addi $4,$3,50"
+[0m[0;33mDebug: NodeProcessor->registers[4] = 350
+[0m[0;33mDebug: Hypervisor->current_node = "tests/instruction_slice_vm1_instructions"
+[0m[0;33mDebug: Running instruction "sub $5,$4,$1"
+[0m[0;33mDebug: NodeProcessor->registers[5] = 25
+[0m[0;33mDebug: Running instruction "DUMP_PROCESSOR_STATE"
+[0m[0;33mDebug: Hypervisor->current_node = "tests/instruction_slice_vm2_instructions"
+[0m[0;33mDebug: Running instruction "sub $5,$4,$1"
+[0m[0;33mDebug: NodeProcessor->registers[5] = 250
+[0m[0;33mDebug: Running instruction "DUMP_PROCESSOR_STATE"
+[0m[0;33mDebug: Hypervisor->current_node = "tests/instruction_slice_vm1_instructions"
+[0m[0;33mDebug: Hypervisor->current_node = "tests/instruction_slice_vm2_instructions"
+[0m[0;33mDebug: Dropping node "tests/instruction_slice_vm1_instructions"
+[0m[0;33mDebug: Hypervisor->current_node = "tests/instruction_slice_vm2_instructions"
+[0m[0;33mDebug: Dropping node "tests/instruction_slice_vm2_instructions"
+[0mR0=0
+R1=10
+R2=20
+R3=30
+R4=35
+R5=25
+R6=0
+R7=0
+R8=0
+R9=0
+R10=0
+R11=0
+R12=0
+R13=0
+R14=0
+R15=0
+R16=0
+R17=0
+R18=0
+R19=0
+R20=0
+R21=0
+R22=0
+R23=0
+R24=0
+R25=0
+R26=0
+R27=0
+R28=0
+R29=0
+R30=0
+R31=0
+Rhi=0
+Rlow=0
+R0=0
+R1=100
+R2=200
+R3=300
+R4=350
+R5=250
+R6=0
+R7=0
+R8=0
+R9=0
+R10=0
+R11=0
+R12=0
+R13=0
+R14=0
+R15=0
+R16=0
+R17=0
+R18=0
+R19=0
+R20=0
+R21=0
+R22=0
+R23=0
+R24=0
+R25=0
+R26=0
+R27=0
+R28=0
+R29=0
+R30=0
+R31=0
+Rhi=0
+Rlow=0

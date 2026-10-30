@@ -119,6 +119,9 @@ wait_for_async_tests() {
 ./run-test.sh "$@" "it_should_ignore_out_of_bounds_register" ./myvmm -v tests/out_of_bounds_register_assembly_file
 ./run-test.sh "$@" "it_should_ignore_write_to_zero_register" ./myvmm -v tests/zero_register_assembly_file
 
+# It should support instruction execution slicing.
+./run-test.sh "$@" "it_should_run_multiple_vms_with_instruction_slice" ./myvmm -d -n 2 -v tests/instruction_slice_vm1_assembly_file -v tests/instruction_slice_vm2_assembly_file
+
 # It should support snapshots.
 ./run-test.sh "$@" "it_should_create_single_snapshot" ./myvmm -d -v tests/single_snapshot_assembly_file
 ./run-test.sh "$@" "it_should_restore_single_snapshot" ./myvmm -d -v tests/single_snapshot_assembly_file -s tests/single_snapshot_snapshot
