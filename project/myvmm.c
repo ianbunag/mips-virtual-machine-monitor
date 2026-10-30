@@ -233,6 +233,7 @@ typedef struct Hypervisor
     Node* pending_head;
     Patterns patterns;
     unsigned int node_count;
+    int instruction_slice;
     int server_port;
     int server_socket_file_descriptor;
     int server_timeout_seconds;
@@ -2306,6 +2307,7 @@ static Hypervisor* setup_hypervisor(int argc, char* argv[])
     }
 
     hypervisor->current_node = NULL;
+    hypervisor->instruction_slice = -1;
     hypervisor->server_port = -1;
     hypervisor->server_socket_file_descriptor = -1;
     hypervisor->server_timeout_seconds = -1;
@@ -2318,13 +2320,32 @@ static Hypervisor* setup_hypervisor(int argc, char* argv[])
      * -s <file>    : Snapshot file to restore
      * -p <port>    : Migration server port (unprivileged: 1024-65535)
      * -t <seconds> : Server idle timeout in seconds (optional)
+     * -n <slice>   : Instruction execution slice per VM (positive integer)
      * -d           : Enable debug logging
      */
     /* Flawfinder: ignore - args are validated */
-    while ((opt = getopt(argc, argv, "v:s:p:t:d")) != -1)
+    while ((opt = getopt(argc, argv, "v:s:p:t:n:d")) != -1)
     {
         switch (opt)
         {
+        case 'n':
+            {
+                char* endptr = NULL;
+                const long slice = strtol(optarg, &endptr, 10);
+
+                if (endptr == optarg || *endptr != '\0' || slice <= 0)
+                {
+                    fprintf(stderr,
+                            "Error: Invalid instruction slice \"%s\". Slice must be a positive integer.\n",
+                            optarg);
+                    teardown_hypervisor(hypervisor);
+                    return NULL;
+                }
+
+                hypervisor->instruction_slice = (int)slice;
+                debug("Instruction slice = %d\n", hypervisor->instruction_slice);
+                break;
+            }
         case 'd':
             debug_enabled = true;
             debug("Debug enabled.\n");
